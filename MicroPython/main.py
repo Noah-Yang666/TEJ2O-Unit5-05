@@ -19,5 +19,5 @@ while True:
         distanceToObject = sonar.ping(
             DigitalPin.P1, DigitalPin.P2, PingUnit.Centimeters
         )
-    display.scroll(distanceToObject + " cm")
-    display.show(Image.HAPPY)
+        display.scroll(distanceToObject + " cm")
+        display.show(Image.HAPPY)
