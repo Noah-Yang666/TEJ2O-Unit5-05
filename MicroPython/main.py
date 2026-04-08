@@ -49,5 +49,23 @@ class HCSR04:
                 k = k + i
             except StopIteration:
                 i = -1
-        dist = -1 if i < 0 else round(((pre + (k - i) * 8.0 + post) * 8 * 0.172) / 2)
+        dist = -1 if i < 0 else round(((pre + (k - i) * 8.0 + post) * 8 * 0.344) / 2)
         return dist
+
+
+# variables needed
+distanceToObject = 0
+
+# setting up
+display.clear()
+display.show(Image.HAPPY)
+
+# finding distance with sonar
+while True:
+    if button_a.was_pressed():
+        display.clear()
+        distanceToObject = HCSR04().distance_mm() / 10
+        display.scroll(str(distanceToObject))
+        display.scroll(" cm")
+display.clear()
+display.show(Image.HAPPY)
